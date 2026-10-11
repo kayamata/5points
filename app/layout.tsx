@@ -1,22 +1,18 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import { Providers } from "@/providers";
+import { SiteFooter, SiteHeader } from "@/shared/components/layout";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
-  title: "Next Scaffold — AI-Ready Next.js Architecture",
+  title: "5Points Electric Technology — EV Charging & Clean Energy in Nigeria",
   description:
-    "A modular Next.js scaffold built for AI agents. Feature-sliced architecture, enforced boundaries, shadcn/ui, TanStack Query, and NextAuth — so your AI writes code that actually fits.",
+    "5Points Electric Technology Limited makes electric mobility more accessible in Nigeria through EV charging, electric vehicles, AC & DC charging cables, and solar energy solutions.",
 };
 
 export default function RootLayout({
@@ -25,12 +21,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
+    <html lang="en" className={`${inter.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col">
-        <Providers>{children}</Providers>
+        <Providers>
+          <SiteHeader />
+          <div className="flex-1">{children}</div>
+          <SiteFooter />
+        </Providers>
       </body>
     </html>
   );
