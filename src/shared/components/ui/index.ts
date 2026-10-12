@@ -1,6 +1,7 @@
 export { Button, buttonVariants } from "./button";
 export { Label } from "./label";
 export { Textarea } from "./textarea";
+export { WhatsAppIcon } from "./whatsapp-icon";
 export {
   Card,
   CardHeader,

@@ -29,17 +29,17 @@ export const SECTION_IDS = {
 } as const;
 
 /**
- * Verified public channel: the company's Instagram profile.
- * Phone / WhatsApp / email are intentionally empty — no verified business
- * numbers or addresses were available. Fill these in once confirmed and the
- * related buttons will appear automatically.
+ * Public contact channels. Phone and WhatsApp use the business line
+ * published via the company's group channels; email stays hidden until a
+ * verified address is supplied.
  */
 export const CONTACT = {
   instagramUrl: "https://www.instagram.com/5pointselectrictech/",
-  phoneDisplay: "", // e.g. "+234 800 000 0000" — unverified, pending confirmation
-  phoneHref: "", // e.g. "tel:+2348000000000"
-  whatsappNumber: "", // e.g. "2348000000000" (wa.me format) — unverified
-  email: "", // unverified
+  phoneDisplay: "+234 906 331 5492",
+  phoneHref: "tel:+2349063315492",
+  whatsappNumber: "2349063315492",
+  whatsappUrl: "https://wa.me/2349063315492",
+  email: "", // unverified — hidden until supplied
 } as const;
 
 /** Cities listed on the company's Instagram profile. */

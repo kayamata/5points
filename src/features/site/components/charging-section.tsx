@@ -9,7 +9,7 @@ export function ChargingSection() {
   return (
     <section
       id={SECTION_IDS.evCharging}
-      className="scroll-mt-16 border-b border-border/60 bg-secondary py-20 sm:py-24"
+      className="scroll-mt-16 border-b border-border/60 bg-secondary py-14 sm:py-16"
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
@@ -50,7 +50,7 @@ export function ChargingSection() {
           </div>
         </div>
 
-        <div className="mt-14">
+        <div className="mt-10">
           <StationFinder />
         </div>
       </div>

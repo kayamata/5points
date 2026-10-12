@@ -11,7 +11,7 @@ export function HeroSection() {
       id={SECTION_IDS.top}
       className="border-b border-border/60 bg-background"
     >
-      <div className="mx-auto grid max-w-6xl items-center gap-12 px-4 py-16 sm:px-6 sm:py-20 lg:grid-cols-2 lg:gap-16 lg:py-24">
+      <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-12 sm:px-6 sm:py-16 lg:grid-cols-2 lg:gap-14 lg:py-20">
         <div>
           <p className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary px-3 py-1 text-xs font-medium text-foreground">
             <span className="size-1.5 rounded-full bg-primary" aria-hidden />

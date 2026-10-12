@@ -8,8 +8,8 @@ import {
 
 export function SiteFooter() {
   return (
-    <footer className="bg-[#242424] text-white">
-      <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
+    <footer className="bg-[#242424] text-white dark:bg-[#101312]">
+      <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6">
         <div className="grid gap-10 md:grid-cols-3">
           <div>
             <BrandLogo variant="footer" />
@@ -73,7 +73,7 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col gap-2 border-t border-white/10 pt-6 text-xs text-white/50 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-10 flex flex-col gap-2 border-t border-white/10 pt-6 text-xs text-white/50 sm:flex-row sm:items-center sm:justify-between">
           <p>
             © {new Date().getFullYear()} {SITE.legalName}. All rights reserved.
           </p>

@@ -10,9 +10,9 @@ export function AboutSection() {
   return (
     <section
       id={SECTION_IDS.about}
-      className="scroll-mt-16 border-b border-border/60 bg-secondary py-20 sm:py-24"
+      className="scroll-mt-16 border-b border-border/60 bg-secondary py-14 sm:py-16"
     >
-      <div className="mx-auto grid max-w-6xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:gap-16">
+      <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:gap-14">
         <div>
           <SectionHeading
             eyebrow="About 5Points"

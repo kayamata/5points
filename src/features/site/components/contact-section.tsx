@@ -1,8 +1,10 @@
-import { Mail, MapPin, MessageCircle, Phone } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
 
+import { buttonVariants, WhatsAppIcon } from "@/shared/components/ui";
 import { SectionHeading } from "@/features/site/components/section-heading";
 import { ContactForm } from "@/features/site/components/contact-form";
 import { CONTACT, SECTION_IDS, SERVICE_AREAS } from "@/utils/constants";
+import { cn } from "@/utils/cn";
 
 function InstagramIcon({ className }: { className?: string }) {
   return (
@@ -24,53 +26,46 @@ function InstagramIcon({ className }: { className?: string }) {
 }
 
 export function ContactSection() {
-  const hasPhone = CONTACT.phoneHref !== "";
-  const hasWhatsapp = CONTACT.whatsappNumber !== "";
-  const hasEmail = CONTACT.email !== "";
-
   return (
     <section
       id={SECTION_IDS.contact}
-      className="scroll-mt-16 bg-background py-20 sm:py-24"
+      className="scroll-mt-16 bg-background py-14 sm:py-16"
     >
-      <div className="mx-auto grid max-w-6xl gap-12 px-4 sm:px-6 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-16">
+      <div className="mx-auto grid max-w-6xl gap-10 px-4 sm:px-6 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-14">
         <div>
           <SectionHeading
             eyebrow="Contact"
             title="Talk to our team"
-            description="Questions about EV charging, electric vehicles, cables, or solar? Send an enquiry and the 5Points team will get back to you."
+            description="Questions about EV charging, electric vehicles, cables, or solar? Call, message us on WhatsApp, or send an enquiry below."
           />
 
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <a
+              href={CONTACT.phoneHref}
+              className={cn(
+                buttonVariants({ size: "lg", variant: "outline" }),
+                "gap-2"
+              )}
+            >
+              <Phone className="size-4" aria-hidden />
+              Call {CONTACT.phoneDisplay}
+            </a>
+            <a
+              href={CONTACT.whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={cn(
+                buttonVariants({ size: "lg" }),
+                "gap-2 bg-[#25D366] text-white hover:bg-[#1eb855]"
+              )}
+            >
+              <WhatsAppIcon className="size-4" />
+              Chat on WhatsApp
+            </a>
+          </div>
+
           <ul className="mt-8 space-y-4">
-            {hasPhone ? (
-              <li>
-                <a
-                  href={CONTACT.phoneHref}
-                  className="inline-flex items-center gap-3 text-sm font-medium text-foreground transition-colors hover:text-primary"
-                >
-                  <span className="flex size-9 items-center justify-center rounded-lg bg-primary/10 text-primary">
-                    <Phone className="size-4" aria-hidden />
-                  </span>
-                  {CONTACT.phoneDisplay}
-                </a>
-              </li>
-            ) : null}
-            {hasWhatsapp ? (
-              <li>
-                <a
-                  href={`https://wa.me/${CONTACT.whatsappNumber}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-3 text-sm font-medium text-foreground transition-colors hover:text-primary"
-                >
-                  <span className="flex size-9 items-center justify-center rounded-lg bg-primary/10 text-primary">
-                    <MessageCircle className="size-4" aria-hidden />
-                  </span>
-                  Chat on WhatsApp
-                </a>
-              </li>
-            ) : null}
-            {hasEmail ? (
+            {CONTACT.email !== "" ? (
               <li>
                 <a
                   href={`mailto:${CONTACT.email}`}
@@ -105,13 +100,6 @@ export function ContactSection() {
               </span>
             </li>
           </ul>
-
-          {!hasPhone && !hasWhatsapp && !hasEmail ? (
-            <p className="mt-6 rounded-lg border border-dashed border-border bg-secondary px-4 py-3 text-xs leading-relaxed text-muted-foreground">
-              Phone, WhatsApp, and email buttons will appear here once the
-              company&apos;s verified contact details are supplied.
-            </p>
-          ) : null}
         </div>
 
         <ContactForm />

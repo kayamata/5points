@@ -51,7 +51,7 @@ export function SolutionsSection() {
   return (
     <section
       id={SECTION_IDS.solutions}
-      className="scroll-mt-16 border-b border-border/60 bg-background py-20 sm:py-24"
+      className="scroll-mt-16 border-b border-border/60 bg-background py-14 sm:py-16"
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <SectionHeading
@@ -61,7 +61,7 @@ export function SolutionsSection() {
           description="From charging access to solar infrastructure, 5Points brings together the products and services that make electric mobility work."
         />
 
-        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {SOLUTIONS.map((solution) => {
             const Icon = solution.icon;
             return (

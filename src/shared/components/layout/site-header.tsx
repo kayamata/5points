@@ -5,6 +5,7 @@ import { Menu, X } from "lucide-react";
 
 import { buttonVariants } from "@/shared/components/ui";
 import { BrandLogo } from "@/shared/components/layout/brand-logo";
+import { ThemeToggle } from "@/shared/components/layout/theme-toggle";
 import { NAV_LINKS, SECTION_IDS } from "@/utils/constants";
 import { cn } from "@/utils/cn";
 
@@ -42,6 +43,7 @@ export function SiteHeader() {
         </nav>
 
         <div className="flex items-center gap-2">
+          <ThemeToggle />
           <a
             href={`#${SECTION_IDS.stationFinder}`}
             className={cn(
